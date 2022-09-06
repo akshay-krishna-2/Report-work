@@ -1,0 +1,28 @@
+[
+  {
+    "companyCode": 0,
+    "companyName": "string",
+    "sectors": [
+      {
+        "sectorID": 0,
+        "sectorName": "string",
+        "sectorDescription": "string",
+        "skills": [
+          "string"
+        ],
+        "projects": [
+          "string"
+        ],
+        "factors": [
+          "string"
+        ],
+        "atributes": [
+          "string"
+        ],
+        "materials": [
+          "string"
+        ]
+      }
+    ]
+  }
+]

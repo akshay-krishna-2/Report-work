@@ -1,0 +1,23 @@
+<div class="map-container tittle">
+    Projects
+</div>
+
+<div class="map-container content">
+    <div class="map-frame">
+        <div id="map">
+        </div>
+    </div>
+</div>
+
+<div class = "container_for_dropdownBox" id = "div works" #box>
+    <button    mat-raised-button class = "head_button" [matMenuTriggerFor]="menu" (click)="arrow_change($event)" >
+        <mat-icon #arrow  >arrow_drop_down</mat-icon>
+        <span #hello>Companies</span>
+    </button>
+    <mat-menu  #menu="matMenu" >
+        <button  mat-menu-item class="dropdown" *ngFor="let company of companies"  id='{{company.company_name}}' (click)="dropdown($event)" >{{company.company_name}}</button>
+    </mat-menu>
+</div>
+
+<app-table-data #tableData class = "table_data" company="{{company_code}}"  ></app-table-data> <!--company_code ="{{company_code}}"-->
+

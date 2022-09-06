@@ -1,0 +1,132 @@
+.body
+{
+    width:100%;
+    height:fit-content;
+    padding:5%;
+    padding: 5%;
+}
+
+.city_card_holder
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.card
+{
+    margin-bottom: 5%;
+    height: 60vh;
+    padding:5%
+}
+
+/*for the internal cards*/
+.attribute_holder
+{
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /*background-color: brown;*/
+  padding-top: 30px ;
+  max-height: 80%;
+}
+
+.center
+{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 7px;
+    }
+  
+  /* Position the "next button" to the right */
+  .prev
+  {
+    left: 1%;
+  }
+  .next {
+    right: 1%;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 5px 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  .box
+  {
+    position:relative;
+    height: 100%;
+    width:96%;
+    /*background-color: cornsilk*/;
+    margin-left:2%;
+    margin-right:2%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+  .box:hover
+  {
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 0 40px 30px rgba(0,0,0,0.08);
+  }
+  .factor
+{
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,0);
+  margin-top:10px;
+}
+
+.chart_holder
+{
+  position: absolute;
+  bottom: 20px;
+  height:65%;
+  width:92%;
+  margin: 4%;
+}
+
+.weather
+{
+  height:100%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0%);
+}

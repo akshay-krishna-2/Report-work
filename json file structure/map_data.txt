@@ -1,0 +1,18 @@
+[
+  {
+    "company_code": 0,
+    "company_name": "string",
+    "inprogress_longitudes": [
+      0
+    ],
+    "inprogress_latitudes": [
+      0
+    ],
+    "completed_longitudes": [
+      0
+    ],
+    "completed_latitudes": [
+      0
+    ]
+  }
+]

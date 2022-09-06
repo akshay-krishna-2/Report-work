@@ -1,0 +1,49 @@
+<div
+  class="card bg-neutral text-neutral-content transition transform hover:-translate-y-1 shadow-xl mb-10"
+>
+  <div class="card-body">
+    <div class="flex justify-between">
+      <h2 class="card-title text-7xl mb-4">{{ citydetails.city }}</h2>
+      <button title="exit" class="btn btn-circle m-1" (click)="onExit()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-auto w-auto"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-wrap justify-items-start px-1">
+      <div class="pt-5 pr-8">
+        <div class="text-lg font-medium">Population</div>
+        <div class="opacity-80">{{ citydetails.population }}</div>
+      </div>
+      <div class="pt-5 pr-8">
+        <div class="text-lg font-medium">Projects Completed</div>
+        <div class="opacity-80">
+          {{ citydetails.completedOnTime + citydetails.completedLate }}
+        </div>
+      </div>
+      <div class="pt-5 pr-8">
+        <div class="text-lg font-medium">Projects Ongoing</div>
+        <div class="opacity-80">{{ citydetails.ongoing }}</div>
+      </div>
+      <div class="pt-5 pr-8">
+        <div class="text-lg font-medium">Projects Onhold</div>
+        <div class="opacity-80">{{ citydetails.onhold }}</div>
+      </div>
+      <div class="pt-5 pr-8" *ngFor="let avgdetes of avgnumericaldetails">
+        <div class="text-lg font-medium">Avg {{ avgdetes.numerical }}</div>
+        <div class="opacity-80">{{ avgdetes.average }}</div>
+      </div>
+    </div>
+  </div>
+</div>

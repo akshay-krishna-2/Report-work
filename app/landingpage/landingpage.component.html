@@ -1,0 +1,6 @@
+<div class="py-16 px-96" *ngIf="cities">
+  <app-citynavcards
+    *ngFor="let city of cities"
+    [city]="city"
+  ></app-citynavcards>
+</div>

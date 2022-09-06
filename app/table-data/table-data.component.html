@@ -1,0 +1,68 @@
+<div class = "tittle">{{company}}</div>
+<div class = "body" style="display:none;" #body>
+  <div class="sectors" *ngFor = " let sector of sectors['sectors']" #sector >
+<div class="sector_name">
+      <mat-card-title >
+        {{sector.sectorName}}
+      </mat-card-title>
+    </div>
+    <!-- internal card -->
+    <div class="attributeHolder"  >
+      <mat-card class = " attributes " *ngFor = "let attribute of attributes " (click) = 'openPopUp(sector[attribute],attribute)'>
+
+        <mat-card-title >
+          {{attribute}} 
+        </mat-card-title>
+
+        <!--for the content-->
+        <div>
+          <mat-list role="list">
+            <mat-list-item *ngFor = " let point of sector[attribute]| slice:0:2"> {{point}}</mat-list-item>
+          </mat-list>
+        </div>
+
+        <!--for the pop up button-->
+        <div class="knowMore">
+          <button mat-button >
+            <img src = 'assets/icons/more.png' class = " more ">
+          </button>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- redirect button -->
+    <div class="redirect_button" (click) = 'redirect_message(sector.sectorName,company)'>
+        <img src = 'assets/icons/plus-sign.png' class="plus_sign">
+    </div>
+
+    <!--next and previous button-->
+    <span class="prev" (click)="plusSlides(-1)">
+      <a  class = "center" >❮</a>
+    </span>
+    <span class="next" (click)="plusSlides(1)" >
+      <a class = "center" >❯</a>
+    </span>
+</div>
+  <!-- the dots to mention the page/ carousel slides -->
+  <div style="text-align:center" >
+    <span *ngFor = " let sector of sectors.sectors; let i = index" class="dot" (click)="currentSlide(i)"></span> 
+  </div>
+</div>
+
+<!--old code just in case-->
+<!--div class = "tittle">{{company_name}}</div>
+<div class = "body" style="display:none;" #body>
+  <div class="sectors" *ngFor = " let sector of sectors" #sector >
+      <div class="sector_name">
+          {{sector.attribute_name}}
+      </div>
+      
+      <div class="attributeHolder">
+          <div class = " attributes " *ngFor = "let attribute of attributes ">
+              {{attribute}}
+          </div>
+      </div>
+  </div>
+  <a class="prev" (click)="plusSlides(-1)">❮</a>
+  <a class="next" (click)="plusSlides(1)">❯</a>
+</div-->

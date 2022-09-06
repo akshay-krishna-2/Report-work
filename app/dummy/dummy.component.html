@@ -1,0 +1,62 @@
+<div class="body">
+    <mat-card-title>{{Company_name}}</mat-card-title>
+    <mat-card-subtitle>{{sector}}</mat-card-subtitle>
+    <div class="city_card_holder"  >
+        <mat-card *ngFor = "let city of cities; let i=index;" class="card" id = "{{city.city_name}}">
+
+            <mat-card-title>{{city.city_name}}</mat-card-title>
+            <mat-card-subtitle>{{sector}}</mat-card-subtitle>
+            
+            <!-- add elements after the divs -->
+            
+            <!--internal cards to hold the various factors--> 
+            <div class = "attribute_holder" >
+                <div class = "box" *ngFor = "let box of boxes | slice : 0 : 3" >
+                    <mat-card-title class="factor" *ngIf="city[box]['factor_name'] !== null ">
+                        {{city[box]["factor_name"]}}
+                    </mat-card-title>
+                    <div class="chart_holder">
+                        <!--canvas  baseChart *ngIf = "city[box]['type'] != 'weather' " 
+                            [type]="city[box]['type']"
+                            [datasets]='city[box]["data_sets"]'
+                            [labels]='city[box]["labael"]'
+                            [options]="chartOptions"
+                            (chartClick)="chartClicked($event)">
+                        </canvas-->
+                        <span  *ngIf = "city[box]['type'] == 'string' "><img src = 'assets/icons/{{weather[i]}}.png' class="weather"></span> 
+                    </div>
+
+                </div>
+            </div> 
+            
+            <div class = "attribute_holder" style = "display:none;">
+                <div class = "box"  *ngFor = "let box of boxes | slice : 3 : 6" >
+                    <mat-card-title class="factor">{{box}}</mat-card-title>
+                </div>
+            </div> 
+            <div class = "attribute_holder" style = "display:none;">
+                <div class = "box"  *ngFor = "let box of boxes | slice : 6 : 9" >
+                    <mat-card-title class="factor">{{box}}</mat-card-title>
+                </div>
+            </div>
+
+            <!--for the prev and next button-->
+            <span class="prev" (click)="plusSlides(-1,$event)">
+                ❮
+            </span>
+            <span class="next" (click)="plusSlides(1,$event)" >
+                ❯
+            </span>
+
+            <!-- the dots to mention the page/ carousel slides -->
+            <div style="text-align:center" >
+                <span  class="dot" (click)="currentSlide(0, $event)"></span>
+                <span  class="dot" (click)="currentSlide(1, $event)"></span> 
+                <span  class="dot" (click)="currentSlide(2, $event)"></span> 
+            </div>
+
+        </mat-card>
+    </div>
+</div>
+
+  

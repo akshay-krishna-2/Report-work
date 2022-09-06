@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title text-2xl mb-2">Add Numerical</h1>
+    <!-- <div mat-dialog-content> -->
+    <div class="form-control my-2">
+      <label for="input1" class="label text-xl font-medium"> Numerical </label>
+      <input
+        id="input1"
+        type="text"
+        placeholder="Enter the Numerical to Add"
+        class="input input-bordered input-secondary w-full max-w-xs"
+        [(ngModel)]="numericalName"
+      />
+    </div>
+    <!-- </div> -->
+    <div mat-dialog-actions class="my-2">
+      <button class="btn btn-outline btn-secondary" (click)="onNoClick()">
+        No Thanks
+      </button>
+      <button class="btn mx-4" (click)="onSubmit()">Submit</button>
+    </div>
+  </div>
+</div>

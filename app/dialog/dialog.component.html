@@ -1,0 +1,10 @@
+<div class="dialog_box">
+    <mat-card-title >
+        {{data[1]}} 
+    </mat-card-title>
+    <p *ngFor = " let point of data[0] ">{{point}}</p>
+    <button mat-dialog-close class="close_button">
+        <mat-icon class="close_icon">close</mat-icon>
+    </button>
+</div>
+  
